@@ -1,21 +1,21 @@
 /* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap");
 
 /* VARIABLES */
 :root {
   /* Colors */
-/* Primary */
---color-moderate-violet: hsl(263, 55%, 52%);
---color-dark-grayish-blue: hsl(217, 19%, 35%);
---color-dark-blackish-blue: hsl(219, 29%, 14%);
---color-white: hsl(0, 0%, 100%);
+  /* Primary */
+  --color-moderate-violet: #7541c8;
+  --color-dark-grayish-blue: #48556a;
+  --color-dark-blackish-blue: #19212e;
+  --color-white: hsl(0, 0%, 100%);
 
-/* Neutral */
---color-light-gray: hsl(0, 0%, 81%);
--color-light-grayish-blue: hsl(210, 46%, 95%);
+  /* Neutral */
+  --color-light-gray: #cfcfcf;
+  --color-light-grayish-blue: #ecf2f8;
 
-/* TYPOGRAPHY */
---font-size: 13px;
+  /* TYPOGRAPHY */
+  --font-size: 13px;
 }
 
 /* GENERAL */
@@ -35,6 +35,20 @@ html {
 body {
   height: 100vh;
   font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--color-light-grayish-blue);
+}
+
+.container {
+  min-width: 375px;
+  padding: 71px 24px;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
 }
 
 /* SKIP LINK */
@@ -46,11 +60,10 @@ body {
   opacity: 0;
   text-decoration: 0;
 
-  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: var(--color-deep-aquamarine-active);
+  color: var(--color-dark-grayish-blue);
 
-  outline: 3px solid var(--color-deep-aquamarine-active);
+  outline: 3px solid var(--color-dark-grayish-blue);
   outline-offset: 5px;
   border-radius: 1px;
 
@@ -64,6 +77,125 @@ body {
   transform: scale(1);
 }
 
+/* MAIN CONTENT */
+.grid__section {
+  grid-template-columns: 1fr;
+  row-gap: 24px;
+  column-gap: 30px;
+}
+
+.grid__item {
+  flex-direction: column;
+  gap: 18px;
+
+  padding: 26px 32px 32px 32px;
+
+  border-radius: 8px;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+}
+
+.user__wrapper {
+  align-items: center;
+  gap: 17px;
+}
+
+.user__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
+}
+
+.user__data {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.user__name {
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.user__role {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 11px;
+  opacity: 0.5;
+}
+
+.user__content {
+  flex-direction: column;
+}
+
+.user__quote {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.user__descr {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  opacity: 0.7;
+}
+
+#grid-item-2 .user__quote,
+#grid-item-3 .user__quote,
+#grid-item-4 .user__quote,
+#grid-item-5 .user__quote {
+  margin-bottom: 16px;
+}
+
+/* CARD 1 */
+#grid-item-1 {
+  color: var(--color-white);
+  background-color: var(--color-moderate-violet);
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 23px;
+}
+
+#grid-item-1 .user__avatar {
+  border: 2px solid #a775f1;
+}
+
+#grid-item-1 .user__quote {
+  margin-bottom: 40px;
+}
+
+#grid-item-1 .user__descr {
+  color: var(--color-light-gray);
+}
+
+/* CARD 2 */
+#grid-item-2 {
+  color: var(--color-white);
+  background: var(--color-dark-grayish-blue);
+}
+
+/* CARD 3 & 5 */
+#grid-item-3,
+#grid-item-5 {
+  color: var(--color-dark-grayish-blue);
+  background-color: var(--color-white);
+}
+
+/* CARD 4 */
+#grid-item-4 {
+  color: var(--color-white);
+  background-color: var(--color-dark-blackish-blue);
+}
+
+#grid-item-4 .user__avatar {
+  border: 2px solid #733FC8;
+}
+
+#grid-item-4 .user__quote {
+  color: var(--color-light-grayish-blue);
+}
+
 /* ATTRIBUTION */
 .attribution {
   width: 100%;
@@ -73,7 +205,7 @@ body {
 }
 
 .attribution a {
-  color: var(--color-blue);
+  color: var(--color-dark-grayish-blue);
   text-decoration: none;
 
   outline: none;
@@ -83,15 +215,15 @@ body {
 }
 
 .attribution a:focus-visible {
-  border-color: var(--color-orange);
+  border-color: var(--color-moderate-violet);
 }
 
 .attribution a:hover {
-  color: var(--color-orange);
-  border-color: var(--color-orange);
+  color: var(--color-moderate-violet);
+  border-color: var(--color-moderate-violet);
 }
 
 .attribution a:active {
-  color: var(--color-orange);
-  border-color: var(--color-orange);
+  color: var(--color-moderate-violet);
+  border-color: var(--color-moderate-violet);
 }
